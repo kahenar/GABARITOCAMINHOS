@@ -7,6 +7,11 @@
 			"metadata": "Nome do Data Factory",
 			"defaultValue": "adf-gabaritoengdata-01"
 		},
+		"ls_AzureSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadeia de caracteres segura para 'connectionString' de 'ls_AzureSqlDatabase'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=singledatabase.database.windows.net;Initial Catalog=db-gabaritoengdata-01;User ID=desafioengdata"
+		},
 		"lsAzureKeyVault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://kvgabaritoengdata01.vault.azure.net/"
@@ -41,6 +46,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"ls_AzureSqlDatabase_connectionString": {
+						"value": "[parameters('ls_AzureSqlDatabase_connectionString')]"
 					},
 					"lsAzureKeyVault_properties_typeProperties_baseUrl": {
 						"value": "[parameters('lsAzureKeyVault_properties_typeProperties_baseUrl')]"
