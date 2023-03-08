@@ -29,9 +29,37 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "AzureSqlTable",
+						"type": "DatasetReference"
+					}
+				}
 			}
 		],
+		"parameters": {
+			"schema_par": {
+				"type": "string",
+				"defaultValue": "SalesLT"
+			},
+			"table_name_par": {
+				"type": "string",
+				"defaultValue": "Customer"
+			},
+			"container_par": {
+				"type": "string",
+				"defaultValue": "landing"
+			},
+			"directory_par": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
