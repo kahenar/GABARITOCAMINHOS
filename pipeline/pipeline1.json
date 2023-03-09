@@ -209,7 +209,17 @@
 							"outputs": [
 								{
 									"referenceName": "Parquet",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_container": {
+											"value": "@pipeline().parameters.container_par",
+											"type": "Expression"
+										},
+										"ds_directory": {
+											"value": "@pipeline().parameters.directory_par",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
