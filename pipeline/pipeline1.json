@@ -19,7 +19,7 @@
 				}
 			},
 			{
-				"name": "Lookup1",
+				"name": "LastModified",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {

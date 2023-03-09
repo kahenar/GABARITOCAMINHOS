@@ -5,6 +5,14 @@
 			"referenceName": "ls_AzureSqlDatabase",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"ds_schema": {
+				"type": "string"
+			},
+			"ds_table": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": []
