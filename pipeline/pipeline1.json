@@ -222,6 +222,49 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "GetFileName",
+							"type": "GetMetadata",
+							"dependsOn": [
+								{
+									"activity": "SQL_to_landing",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataset": {
+									"referenceName": "Parquet",
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_container": {
+											"value": "@pipeline().parameters.container_par",
+											"type": "Expression"
+										},
+										"ds_directory": {
+											"value": "@pipeline().parameters.directory_par",
+											"type": "Expression"
+										}
+									}
+								},
+								"fieldList": [
+									"childItems"
+								],
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"enablePartitionDiscovery": false
+								}
+							}
 						}
 					]
 				}
