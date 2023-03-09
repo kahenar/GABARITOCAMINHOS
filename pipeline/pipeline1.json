@@ -57,7 +57,8 @@
 				"defaultValue": "landing"
 			},
 			"directory_par": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "AdventureWorks/Customer"
 			}
 		},
 		"annotations": []
