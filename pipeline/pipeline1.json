@@ -87,6 +87,19 @@
 						}
 					}
 				}
+			},
+			{
+				"name": "SetLastModified",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "LastModified",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": []
 			}
 		],
 		"parameters": {
