@@ -58,7 +58,7 @@
 			},
 			"directory_par": {
 				"type": "string",
-				"defaultValue": "AdventureWorks/Customer"
+				"defaultValue": "AdventureWorks/Customer/"
 			}
 		},
 		"annotations": []
