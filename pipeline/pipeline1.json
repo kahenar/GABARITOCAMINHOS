@@ -33,6 +33,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select * from dbo.watermark where table_name = '@{pipeline().parameters.table_name_par}'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
