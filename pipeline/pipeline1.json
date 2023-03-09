@@ -38,7 +38,17 @@
 					},
 					"dataset": {
 						"referenceName": "AzureSqlTable",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_schema": {
+								"value": "@pipeline().parameters.schema_par",
+								"type": "Expression"
+							},
+							"ds_table": {
+								"value": "@pipeline().parameters.table_name_par",
+								"type": "Expression"
+							}
+						}
 					}
 				}
 			}
