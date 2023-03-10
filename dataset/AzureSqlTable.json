@@ -6,11 +6,11 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"ds_schema": {
+			"ds_schema_table": {
 				"type": "string",
 				"defaultValue": "SalesLT"
 			},
-			"ds_table": {
+			"ds_name_table": {
 				"type": "string",
 				"defaultValue": "Customer"
 			}
