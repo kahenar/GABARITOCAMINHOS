@@ -7,10 +7,12 @@
 		},
 		"parameters": {
 			"ds_schema": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "SalesLT"
 			},
 			"ds_table": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "Customer"
 			}
 		},
 		"annotations": [],
