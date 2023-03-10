@@ -14,5 +14,6 @@
 				"secretName": "azsql-pwd-key-gabarito"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
