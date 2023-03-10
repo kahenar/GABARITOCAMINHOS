@@ -20,11 +20,11 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": {
-				"value": "@dataset().ds_schema",
+				"value": "@dataset().ds_schema_table",
 				"type": "Expression"
 			},
 			"table": {
-				"value": "@dataset().ds_table",
+				"value": "@dataset().ds_name_table",
 				"type": "Expression"
 			}
 		}

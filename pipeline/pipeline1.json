@@ -18,7 +18,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "select * from dbo.watermark where table_name = '@{pipeline().parameters.table_name_par}'",
+							"value": "select * from dbo.watermark where table_name = '@{pipeline().parameters.table_name_par}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -28,11 +28,11 @@
 						"referenceName": "AzureSqlTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"ds_schema": {
+							"ds_schema_table": {
 								"value": "@pipeline().parameters.schema_par",
 								"type": "Expression"
 							},
-							"ds_table": {
+							"ds_name_table": {
 								"value": "@pipeline().parameters.table_name_par",
 								"type": "Expression"
 							}
@@ -66,11 +66,11 @@
 						"referenceName": "AzureSqlTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"ds_schema": {
+							"ds_schema_table": {
 								"value": "@pipeline().parameters.schema_par",
 								"type": "Expression"
 							},
-							"ds_table": {
+							"ds_name_table": {
 								"value": "@pipeline().parameters.table_name_par",
 								"type": "Expression"
 							}
@@ -204,11 +204,11 @@
 									"referenceName": "AzureSqlTable",
 									"type": "DatasetReference",
 									"parameters": {
-										"ds_schema": {
+										"ds_schema_table": {
 											"value": "@pipeline().parameters.schema_par",
 											"type": "Expression"
 										},
-										"ds_table": {
+										"ds_name_table": {
 											"value": "@pipeline().parameters.table_name_par",
 											"type": "Expression"
 										}
@@ -304,11 +304,11 @@
 									"referenceName": "AzureSqlTable",
 									"type": "DatasetReference",
 									"parameters": {
-										"ds_schema": {
+										"ds_schema_table": {
 											"value": "@pipeline().parameters.schema_par",
 											"type": "Expression"
 										},
-										"ds_table": {
+										"ds_name_table": {
 											"value": "@pipeline().parameters.table_name_par",
 											"type": "Expression"
 										}
