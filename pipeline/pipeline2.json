@@ -17,7 +17,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select * from @{pipeline().parameters.schema_par}.@{pipeline().parameters.table_name_par} ",
+						"sqlReaderQuery": {
+							"value": "select * from @{pipeline().parameters.schema_par}.@{pipeline().parameters.table_name_par} ",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -45,8 +48,14 @@
 						"referenceName": "AzureSqlTable2",
 						"type": "DatasetReference",
 						"parameters": {
-							"ds_name_table": "Customer",
-							"ds_schema_table": "SalesLT"
+							"ds_name_table": {
+								"value": "@pipeline().parameters.table_name_par",
+								"type": "Expression"
+							},
+							"ds_schema_table": {
+								"value": "@pipeline().parameters.schema_par",
+								"type": "Expression"
+							}
 						}
 					}
 				],
@@ -62,6 +71,16 @@
 				]
 			}
 		],
+		"parameters": {
+			"schema_par": {
+				"type": "string",
+				"defaultValue": "SalesLT"
+			},
+			"table_name_par": {
+				"type": "string",
+				"defaultValue": "Customer"
+			}
+		},
 		"annotations": []
 	}
 }
