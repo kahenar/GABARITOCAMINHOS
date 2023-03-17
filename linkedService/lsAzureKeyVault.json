@@ -1,0 +1,11 @@
+{
+	"name": "lsAzureKeyVault",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kvgabaritoengdata01.vault.azure.net/"
+		}
+	}
+}
