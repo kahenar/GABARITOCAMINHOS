@@ -1,5 +1,6 @@
 {
 	"name": "ls_AzureSqlDatabase",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureSqlDatabase",
@@ -14,6 +15,5 @@
 				"secretName": "azsql-pwd-key-gabarito"
 			}
 		}
-	},
-	"type": "Microsoft.DataFactory/factories/linkedservices"
+	}
 }

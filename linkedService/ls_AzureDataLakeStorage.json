@@ -1,5 +1,6 @@
 {
 	"name": "ls_AzureDataLakeStorage",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"description": "conexãoDatalake",
 		"annotations": [],
