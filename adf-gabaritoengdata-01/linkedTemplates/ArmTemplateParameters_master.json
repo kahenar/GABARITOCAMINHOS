@@ -5,8 +5,14 @@
 		"factoryName": {
 			"value": "adf-gabaritoengdata-01"
 		},
+		"SqlServer_connectionString": {
+			"value": ""
+		},
 		"ls_AzureSqlDatabase_connectionString": {
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=singledatabase.database.windows.net;Initial Catalog=db-gabaritoengdata-01;User ID=desafioengdata"
+		},
+		"ls_AzureSqlDatabase02_connectionString": {
+			"value": ""
 		},
 		"lsAzureKeyVault_properties_typeProperties_baseUrl": {
 			"value": "https://kvgabaritoengdata01.vault.azure.net/"
