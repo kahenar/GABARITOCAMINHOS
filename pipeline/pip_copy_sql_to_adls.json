@@ -17,7 +17,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select * from dbo.watermark where table_name = '@{pipeline().parameters.table_name_par}'",
+						"sqlReaderQuery": {
+							"value": "select * from dbo.watermark where table_name = '@{pipeline().parameters.table_name_par}'",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -52,7 +55,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT max(ModifiedDate) as ModifiedDate  FROM @{pipeline().parameters.schema_par}.@{pipeline().parameters.table_name_par}",
+						"sqlReaderQuery": {
+							"value": "SELECT max(ModifiedDate) as ModifiedDate  FROM @{pipeline().parameters.schema_par}.@{pipeline().parameters.table_name_par}",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -86,7 +92,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "last_modified",
-					"value": "@activity('LastModified').output.firstRow.LastModified"
+					"value": {
+						"value": "@activity('LastModified').output.firstRow.LastModified",
+						"type": "Expression"
+					}
 				}
 			},
 			{
@@ -103,7 +112,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "max_writed_value",
-					"value": "@activity('Maxlastmodified').output.firstRow.ModifiedDate"
+					"value": {
+						"value": "@activity('Maxlastmodified').output.firstRow.ModifiedDate",
+						"type": "Expression"
+					}
 				}
 			},
 			{
@@ -161,7 +173,10 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": "select * from @{pipeline().parameters.schema_par}.@{pipeline().parameters.table_name_par} where ModifiedDate > '@{variables('last_modified')}' and ModifiedDate <= '@{variables('max_writed_value')}'",
+									"sqlReaderQuery": {
+										"value": "select * from @{pipeline().parameters.schema_par}.@{pipeline().parameters.table_name_par} where ModifiedDate > '@{variables('last_modified')}' and ModifiedDate <= '@{variables('max_writed_value')}'",
+										"type": "Expression"
+									},
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
@@ -256,6 +271,7 @@
 								],
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
 									"enablePartitionDiscovery": false
 								}
 							}
@@ -270,7 +286,8 @@
 				"defaultValue": "SalesLT"
 			},
 			"table_name_par": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "AdventureWorks"
 			},
 			"container_par": {
 				"type": "string",
