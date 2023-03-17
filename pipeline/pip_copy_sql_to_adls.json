@@ -113,7 +113,7 @@
 				"typeProperties": {
 					"variableName": "max_writed_value",
 					"value": {
-						"value": "@activity('MaxLastModified').output.firstRow.ModifiedDate",
+						"value": "@activity('MaxLastModified').output.firstRow.MaxLastModified",
 						"type": "Expression"
 					}
 				}
