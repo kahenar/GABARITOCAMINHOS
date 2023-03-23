@@ -1,0 +1,20 @@
+{
+	"name": "ls_AzureDataLakeStorage",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "conexãoDatalake",
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://lrsstoragegabarito01.dfs.core.windows.net",
+			"accountKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "lsAzureKeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "adls-key-gabarito"
+			}
+		}
+	}
+}
